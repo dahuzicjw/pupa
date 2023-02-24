@@ -10,5 +10,6 @@
     <modules>
         <module>xx</module>
         <module>kafka</module>
+        <module>spring-demo</module>
     </modules>
 </project>

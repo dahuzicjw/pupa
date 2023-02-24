@@ -3,7 +3,10 @@ package com.github;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
 /**
@@ -14,12 +17,9 @@ import java.util.Random;
 public class Application {
 
     public static void main(String[] args) {
-
-        System.out.println(randomMac4Qemu());
-        System.out.println(randomMac4Qemu());
-        System.out.println(randomMac4Qemu());
-        System.out.println(randomMac4Qemu());
+        System.out.println(String.valueOf(1));
     }
+
     private static String SEPARATOR_OF_MAC = ":";
 
     /**
