@@ -90,9 +90,9 @@
 
         <!-- json -->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.73</version>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>2.0.2</version>
         </dependency>
 
         <!-- mysql -->
@@ -232,7 +232,33 @@
             <artifactId>okhttp</artifactId>
             <version>3.14.9</version>
         </dependency>
+        
+        <!-- iText 7 核心依赖 -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>kernel</artifactId>
+            <version>7.1.16</version>
+        </dependency>
 
+        <!-- iText 7 布局依赖 -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>layout</artifactId>
+            <version>7.1.16</version>
+        </dependency>
+
+        <!-- 添加中文字体支持 -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itext-asian</artifactId>
+            <version>5.2.0</version>
+        </dependency>
+        <!-- 处理 PDF 表单的依赖 -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>forms</artifactId>
+            <version>7.1.16</version>
+        </dependency>
     </dependencies>
 
     <build>
