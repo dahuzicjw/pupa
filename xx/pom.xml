@@ -3,21 +3,21 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cmy</groupId>
-    <artifactId>xx</artifactId>
+    <artifactId>XX</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>xx</name>
+    <name>XX</name>
 
     <properties>
-
-        <!-- JDK版本 -->
-        <java.version>1.8</java.version>
-
-        <spring.version>5.3.1</spring.version>
+        <spring.version>4.2.4.RELEASE</spring.version>
+        <mybatis.version>3.2.2</mybatis.version>
+        <mybatis.spring.version>1.1.1</mybatis.spring.version>
 
         <!-- log -->
-        <slf4j.version></slf4j.version>
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.10</slf4j.version>
 
+        <c3p0.version>0.9.1.2</c3p0.version>
 
         <!-- alibaba -->
         <fastjson.version>1.2.7</fastjson.version>
@@ -25,7 +25,7 @@
         <aliyun.sdk.oss.version>2.2.1</aliyun.sdk.oss.version>
 
         <!-- mysql -->
-        <mysql.version></mysql.version>
+        <mysql.version>5.1.37</mysql.version>
 
         <!-- httpclient -->
         <httpclient.version>4.3.5</httpclient.version>
@@ -67,7 +67,7 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.42.Final</version>
+            <version>4.1.5.Final</version>
         </dependency>
         <!-- http -->
         <dependency>
@@ -92,26 +92,26 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.73</version>
+            <version>1.2.3</version>
         </dependency>
 
         <!-- mysql -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.16</version>
+            <version>${mysql.version}</version>
         </dependency>
 
         <!-- mybatis -->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
-            <version>3.2.2</version>
+            <version>${mybatis.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
-            <version>1.1.1</version>
+            <version>${mybatis.spring.version}</version>
         </dependency>
         <!-- mybaits 分页插件 -->
         <dependency>
@@ -123,6 +123,13 @@
             <groupId>com.github.jsqlparser</groupId>
             <artifactId>jsqlparser</artifactId>
             <version>0.9.4</version>
+        </dependency>
+
+        <!-- jdbc pool -->
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>${c3p0.version}</version>
         </dependency>
 
         <!-- memcache client -->
@@ -182,16 +189,39 @@
             <version>3.1</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.slf4j</groupId>-->
-<!--            <artifactId>slf4j-api</artifactId>-->
-<!--            <version>1.7.10</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.slf4j</groupId>-->
-<!--            <artifactId>slf4j-log4j12</artifactId>-->
-<!--            <version>1.7.10</version>-->
-<!--        </dependency>-->
+        <!-- mina -->
+        <dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-core</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>jcl-over-slf4j</artifactId>-->
+        <!--<version>1.6.1</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>slf4j-nop</artifactId>-->
+        <!--<version>1.6.1</version>-->
+        <!--</dependency>-->
+
+        <!-- log -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
 
         <!-- provided lib -->
         <dependency>
@@ -210,17 +240,17 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
-            <version>4.1.1</version>
+            <version>3.9</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>4.1.1</version>
+            <version>3.9</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml-schemas</artifactId>
-            <version>4.1.1</version>
+            <version>3.9</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -228,10 +258,20 @@
             <version>1.4.1.RELEASE</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.16.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xiaoleilu</groupId>
+            <artifactId>hutool</artifactId>
+            <version>2.16.2</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>xx</finalName>
+        <finalName>XX</finalName>
         <plugins>
             <!-- Maven插件 配置 -->
             <!-- JDK版本插件 -->
@@ -240,12 +280,20 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>11</source>
+                    <target>11</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
 
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-surefire-plugin</artifactId>-->
+                <!--<version>${plugin.maven.surefire.version}</version>-->
+                <!--<configuration>-->
+                    <!--<skipTests>${skipTests}</skipTests>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
         </plugins>
 
         <!--配置Maven 对resource文件 过滤 -->
