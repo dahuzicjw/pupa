@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: spring-demo
+  profiles:
+    active: dev
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  # 开发
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+
+server:
+  port: 8080
+  session-timeout: 1440
+  tomcat:
+    uri-encoding: UTF-8
+
+logging:
+  level:
+    com.cjw: debug
+
+pagehelper:
+  helper-dialect: mysql
+  support-methods-arguments: true
+  page-size-zero: false

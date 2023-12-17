@@ -1,6 +1,6 @@
 package com.github.db.mongodb;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import com.github.db.mongodb.dao.Book;
 import com.github.db.mongodb.dao.Student;
 import com.github.db.mongodb.dao.StudentDao;
