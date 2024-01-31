@@ -1,6 +1,7 @@
 package com.github.net.tcp;
 
-import com.alibaba.dubbo.common.json.JSONObject;
+
+import com.alibaba.fastjson2.JSONObject;
 
 import java.io.*;
 import java.net.Socket;
