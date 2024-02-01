@@ -36,23 +36,23 @@ public class SseApplication {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "data:行情:" + Math.random() + "\n\n";
+        return "data:测试:" + Math.random() + "\n\n";
     }
 
-    @GetMapping(value = "get_true")
-    public void getData_True(HttpServletResponse response) {
+    @GetMapping(value = "test")
+    public void test(HttpServletResponse response) {
         response.setContentType("text/event-stream");
         response.setCharacterEncoding("utf-8");
 
         try {
             PrintWriter pw = response.getWriter();
-            while (true) {
+            for (int i = 0; i < 5; i++) {
                 if (pw.checkError()) {
                     System.out.println("客户端断开连接");
                     break;
                 }
                 Thread.sleep(1000);
-                pw.write("data:行情:" + Math.random() + "\n\n");
+                pw.write("data:测试:" + Math.random() + "\n\n");
                 pw.flush();
             }
         } catch (IOException | InterruptedException e) {
